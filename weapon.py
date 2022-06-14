@@ -3,4 +3,4 @@ class Weapon:
         self.name = name
         self.attack_power = attack_power
     
-    
+    #choose one of three? ...after this one is working.
