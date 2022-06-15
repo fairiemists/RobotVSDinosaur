@@ -1,12 +1,17 @@
+import random
+
 class Dinosaur:
     def __init__(self, name, attack_power):
         self.name = name
         self.attack_power = attack_power
-        self.health = int  #random? w/in range
+        self.health = random.randrange(25, 50, 1)  #random? w/in range
     
     def attack(self, robot):
+        print(f"{self.name} attacks!")
+        self.attack_power = random.randrange(2, 10, 1)
+        robot.health -= self.attack_power
+        print(f"{self.name} hits for {self.attack_power} damage.")
         # random number for damage w/in range (1-5?)
-        pass
-
+        return #or continue?
 
     #create Herd class??? choose 1 of 3 dinosaurs ... after this one is working.

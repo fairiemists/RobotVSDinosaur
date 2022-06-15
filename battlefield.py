@@ -13,7 +13,7 @@ class Battlefield:
         pass
 
     def display_welcome(self):
-        #witty welcome
+        #witty welcome (hype it up!)
         pass
 
     def battle_phase(self):
