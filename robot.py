@@ -7,6 +7,9 @@ class Robot:
         self.health = random.randrange(25, 50, 1)   #random? w/in range 25-50?
         self.active_weapon = Weapon()
 
+    weapon_one = Weapon("saw-blade", "spinning swipe")
+
+
     def attack(self, dinosaur, weapon):
         print()
         print(f"{self.name} attacks!")

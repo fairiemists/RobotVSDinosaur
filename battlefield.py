@@ -1,24 +1,26 @@
 from dinosaur import Dinosaur
 from robot import Robot
 
-import random #??
+# import random #??
 
 class Battlefield:
-    def __init__(self):
+    def __init__(self, name):
+        self.name = name
         self.robot = Robot()
         self.dinosaur = Dinosaur()
     
-    def run_game(self):
-        print()
-        #call display_welcome
-        self.display_welcome
-        print()
-        #call battle_phase & loop until zero or lower
-        self.battle_phase
-        print()
-        #call display_winner
-        self.display_winner
-        
+    
+    dinosaur_one = Dinosaur("T-rex:", "tailsweep")
+    # print witty creation comment
+    print(f"{dinosaur_one} stomps into the {self.name}. ")
+    
+    
+    # create robot (Fleet class?)
+    robot_one = Robot("Megatron")
+    # print witty creation comment
+    print(f"{robot_one} thunks into the {self.name}. Its {robot.weapon_one} at the ready. ")
+
+      
 
     def display_welcome(self, robot, dinosaur):
         #witty welcome (hype it up!)
@@ -27,6 +29,14 @@ class Battlefield:
         print(f"Ready...Set...FIGHT!")
         self.battle_phase()
         return #or continue?
+
+
+
+    def display_winner(self, winner):
+        #witty response
+        print(f"{winner} executes a crushing blow. {winner} WINS!!")
+        return
+
 
     def battle_phase(self, robot, dinosaur, winner):
         #loop until at zero or lower
@@ -43,16 +53,18 @@ class Battlefield:
         else: 
             winner == robot
             self.display_winner
+    
 
-
-    def display_winner(self, winner):
-        #witty response
-        print(f"{winner} executes a crushing blow. {winner} WINS!!")
-        return
-
-
-
-
+    def run_game(self):
+        print()
+        #call display_welcome
+        self.display_welcome
+        print()
+        #call battle_phase & loop until zero or lower
+        self.battle_phase
+        print()
+        #call display_winner
+        self.display_winner
 
 
 
