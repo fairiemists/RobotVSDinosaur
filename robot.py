@@ -5,22 +5,15 @@ class Robot:
     def __init__(self, name):
         self.name = name
         self.health = random.randrange(25, 50, 1)   #random? w/in range 25-50?
-        self.active_weapon = Weapon()
-
-    weapon_one = Weapon("saw-blade", "spinning swipe")
+        self.active_weapon = Weapon("saw-blade", "spinning swipe")
 
 
-    def attack(self, dinosaur, weapon):
-        print()
+    def attack(self, dinosaur):
         print(f"{self.name} attacks!")
         robot_damage = random.randrange(2, 10, 1)
         dinosaur.health -= robot_damage
-        # weapon.weapon_damage(dinosaur) ??? 
-        # Add weapon_damage function in weapon file?
-        print(f"{self.name} hits with {weapon.name} for {robot_damage} damage.")
+        print(f"{self.name} hits with {self.active_weapon.name} for {robot_damage} damage.")
         print(f"{dinosaur.name} has {dinosaur.health} health remaining.")
-        print()
-        # random number for damage w/in range (1-5?)
         return #or continue?        
 
 

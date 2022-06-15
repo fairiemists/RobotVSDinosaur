@@ -14,7 +14,6 @@ class Dinosaur:
         robot.health -= dinosaur_damage
         print(f"{self.name} hits for {self.attack_power} damage.")
         print(f"{robot.name} has {robot.health} health remaining.")
-        print()
         # random number for damage w/in range (1-5?)
         return #or continue?
 
