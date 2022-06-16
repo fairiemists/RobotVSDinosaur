@@ -1,7 +1,7 @@
 from dinosaur import Dinosaur
 from robot import Robot
 
-# import random #??
+import random #??
 
 class Battlefield:
     def __init__(self, name):
@@ -29,30 +29,39 @@ class Battlefield:
     def display_winner(self, winner):
         print(f"{winner.name} executes a critical blow. {winner.name} WINS!!")
         print(f"{self.name} is safe once more.")
-        return
+
 
 
     def battle_phase(self, robot, dinosaur):
+        
+        result = random.choice(robot, dinosaur)
+        if (result == robot):
+            self.robot.attack(dinosaur)
+        else:
+            self.dinosaur.attack(robot)
+
 
         self.dinosaur.attack(robot)
+        while (self.robot.health > 0):
+            print(f"{self.robot.name} is still standing!") 
+            print()
+            self.battle_phase(self.robot, self.dinosaur) 
+            break
         while (self.robot.health <= 0):
             winner = self.dinosaur
             self.display_winner(winner)
             return
-        while (self.robot.health > 0):
-            print(f"{self.robot.name} is still standing!") 
-            print()
-            break
-
+            
         self.robot.attack(dinosaur)
+        while (self.dinosaur.health > 0): 
+            print(f"{self.dinosaur.name} is still standing!") 
+            print()
+            self.battle_phase(self.robot, self.dinosaur) 
+            break
         while (self.dinosaur.health <= 0):
             winner = self.robot
             self.display_winner(winner)
-            return
-        while (self.dinosaur.health > 0): 
-            print(f"{self.dinosaur.name} is still standing!") 
-            self.battle_phase(self.robot, self.dinosaur)
-    
+            return            
 
     def run_game(self):
         print()
@@ -61,6 +70,7 @@ class Battlefield:
         self.battle_phase(self.robot, self.dinosaur)
         #print()
         #self.display_winner(self.winner)
+        
         
 
 

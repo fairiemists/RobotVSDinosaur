@@ -1,3 +1,4 @@
+from pip import main
 from battlefield import Battlefield
 
 
@@ -7,5 +8,6 @@ battlefield = Battlefield("Epic City")
 
 # call run_game from Battlefield
 battlefield.run_game()
+
 
 
