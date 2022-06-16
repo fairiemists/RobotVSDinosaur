@@ -4,7 +4,7 @@ import random
 class Robot: 
     def __init__(self, name):
         self.name = name
-        self.health = random.randrange(20, 25, 1)   
+        self.health = random.randrange(20, 30, 1)   
         self.active_weapon = Weapon("saw-blade", "spinning swipe")
 
 
@@ -13,7 +13,6 @@ class Robot:
         robot_damage = random.randrange(2, 8, 1)
         dinosaur.health -= robot_damage
         print(f"{self.name} hits with {self.active_weapon.name} for {robot_damage} damage.")
-        #print(f"{dinosaur.name} has {dinosaur.health} health remaining.")
         return         
 
 
